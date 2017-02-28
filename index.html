@@ -12,13 +12,28 @@
   	<body>
   	  <br>  <p>Use the arrow keys to navigate!</p> <br> 
 	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
-			<br>  <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	
+			<br>  <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	<br>
+			<p>To change the overall difficulty, press the buttons below.</p> <br>
+			<button id="EasyButton">Easy</button> <button id="MediumButton">Medium</button> <button id="HardButton">Hard</button>
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
       	var ctx = canvas.getContext("2d");
 				
-			
+				// difficulty buttons
+				var easy = document.getElementById("EasyButton");
+				var medium = document.getElementById("MediumButton");
+				var hard = document.getElementById("HardButton");
+				
+				easy.onclick = function() {
+					userBall.difficulty = 1.3;
+				}
+				medium.onclick = function() {
+					userBall.difficulty = 1.5;
+				}
+				hard.onclick = function() {
+					userBall.difficulty = 1.7;
+				}
       	
       	// timer
         var start = Date.now();
@@ -126,7 +141,8 @@
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
 												if (userBall.score < initReqScore) {	
 													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*1/5, 10);
-												}
+												}, 
+											difficulty: 1.5;
       	              }
       	};
       
@@ -217,8 +233,8 @@
               if ((Math.round((Date.now() - start)/1000) <= initTime  && userBall.score >= initReqScore)) {
                 start = Date.now();
                 
-								initTime += 3*i;
-                initReqScore = Math.floor(userBall.score*0.8) + initReqScore + 10*i;
+								initTime += 2*i;
+                initReqScore = Math.floor(initReqScore*userBall.difficulty) + 5*i;
                 
                 userBall.level++;
                 if (i % 3 == 0) {userBall.radius--};
