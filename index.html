@@ -120,6 +120,7 @@
           	            },
       	              score: 0,
       	              level: 1,
+											difficulty: 1.5,
       	              display: function() {
       	                ctx.fillStyle = "black";
       	                ctx.font = "20px Verdana";
@@ -132,8 +133,7 @@
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
 												if (userBall.score < initReqScore) {	
 													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*1/5, 10);
-												}, 
-											difficulty: 1.5;
+												} 
       	              }
       	};
       
