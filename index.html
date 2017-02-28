@@ -5,7 +5,7 @@
     	<style>
     	  * { padding: 0; margin: 0;}
     	  p {text-align: center; font-family:"Trebuchet MS", Helvetica, sans-serif; font-size: 30;}
-    	  canvas {background: #101; display: block; margin: 0 auto;}	
+    	  canvas {background: #eee; display: block; margin: 0 auto;}	
 				
     	</style>
 	  </head>
@@ -13,7 +13,7 @@
   	<body>
   	  <br>  <p>Use the arrow keys to navigate!</p> <br> 
 	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
-			<br>  <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	<br>
+			<br>  <p>Win by beating Level 15. Each level will increase in difficulty systematically.</p>	<br>
 			
 	    <script>
       	// create canvas
@@ -91,7 +91,7 @@
           	            create: function() {
           	              ctx.beginPath();
             	            ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
-            	            ctx.fillStyle = "#eeeeee";
+            	            ctx.fillStyle = "#111111";
                         	ctx.fill();
                         	ctx.closePath();
           	            },
@@ -117,7 +117,7 @@
       	              level: 1,
 											difficulty: 1.5,
       	              display: function() {
-      	                ctx.fillStyle = "white";
+      	                ctx.fillStyle = "Black";
       	                ctx.font = "20px Verdana";
       	                ctx.textAlign = "left";
       	                ctx.fillText("Level: " + this.level, 0, canvas.height - 35);
@@ -287,6 +287,7 @@
           } else if (gameOver == true) {
 						
 							window.alert("Sorry, you ran out of time. Reload to try again.");
+							location.reload(true);
 							
 					} else {
             requestAnimationFrame(drawLoop);
