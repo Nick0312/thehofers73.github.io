@@ -10,9 +10,9 @@
 	  </head>
   
   	<body>
-  	  <br> <br> <p>Use the arrow keys to navigate!</p> <br> <br>
+  	  <br>  <p>Use the arrow keys to navigate!</p> <br> 
 	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
-			<br> <br> <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	
+			<br>  <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
@@ -116,18 +116,17 @@
       	              level: 1,
       	              display: function() {
       	                ctx.fillStyle = "black";
-      	                ctx.font = "20px Comic Sans MS";
+      	                ctx.font = "20px Verdana";
       	                ctx.textAlign = "left";
       	                ctx.fillText("Level: " + this.level, 0, canvas.height - 35);
       	                ctx.fillText("Score: " + this.score, 0, canvas.height - 10);
 											
-			      						ctx.font = "13px Lucida Console";
+			      						ctx.font = "15px Lucida Console";
 												ctx.textAlign = "left";
-												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", canvas.width*1/5, 10);
+												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
 												if (userBall.score < initReqScore) {	
-													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*2/5, 10);
+													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*1/5, 10);
 												}
-												ctx.fillText("Time played in ms: " + (Date.now() - start));
       	              }
       	};
       
