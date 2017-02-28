@@ -12,7 +12,8 @@
   
   	<body>
   	  <br> <br> <p>Use the arrow keys to navigate!</p> <br> <br>
-	    <canvas id = "gameCanvas" width = "400" height = "400"></canvas>
+	    <canvas id = "gameCanvas" width = "600" height = "300"></canvas>
+			<br> <br> <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
@@ -114,12 +115,17 @@
       	              level: 1,
       	              display: function() {
       	                ctx.fillStyle = "black";
-      	                ctx.font = "20px Comic Sans MS";
+      	                ctx.font = "20px Arial";
       	                ctx.textAlign = "center";
       	                ctx.fillText("Level: " + this.level, canvas.width/2, canvas.height*4/5 - 25);
       	                ctx.fillText("Score: " + this.score, canvas.width/2, canvas.height*4/5);
-			
-			      
+											
+			      						ctx.font = "10px monospace";
+												ctx.textAlign = "left";
+												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds till upgrade", canvas.width/2 - 30, 10);
+												if (userBall.score < initReqScore) {	
+													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width/2 + 30, 10);
+												}
       	              }
       	};
       
@@ -198,12 +204,14 @@
         
         // generate levels
         var initReqScore = 50;
+				var initTime = 20;
         function newLevel() {
           for (var i = 1; i < 31; i++) {
             if (userBall.level == i) {
-              if (Math.round((Date.now() - start)/1000) >= (20 + 5*i)  && userBall.score >= initReqScore) {
+              if (Math.round((Date.now() - start)/1000) >= initTime  && userBall.score >= initReqScore) {
                 start = Date.now();
                 
+								initTime += 5*i;
                 initReqScore += 10*i;
                 
                 userBall.level++;
