@@ -276,7 +276,7 @@
       	    ctx.textAlign = "center";
       	    ctx.fillText("You won!", canvas.width/2, canvas.height/2 - 100);
       	    ctx.fillText("Score: " + userBall.score, canvas.width/2, canvas.height/2);
-          } else if ( elapsedTime >= initTime  && userBall.score < (initReqScore - Math.floor(userBall.score*0.8) - 10*userBall.level)) {
+          } else if ((initTime - (Math.floor((Date.now() - start)/1000)) < 0) {
 						
 							window.alert("Sorry, you ran out of time. Reload to try again.");
 							
