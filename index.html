@@ -6,13 +6,13 @@
     	<style>
     	  * { padding: 0; margin: 0;}
     	  p {text-align: center; font-style: 'Source Sans Pro'; font-size: 30;}
-    	  canvas {background: #ddd; display: block; margin: 0 auto;}
+    	  canvas {background: #ccc; display: block; margin: 0 auto;}
     	</style>
 	  </head>
   
   	<body>
   	  <br> <br> <p>Use the arrow keys to navigate!</p> <br> <br>
-	    <canvas id = "gameCanvas" width = "600" height = "300"></canvas>
+	    <canvas id = "gameCanvas" width = "400" height = "400"></canvas>
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
@@ -22,7 +22,7 @@
         var start = Date.now();
       	
       	// selection of html colors
-      	var colors = ["Navy", "DarkBlue","MediumBlue","Blue","Teal","DarkCyan","DeepSkyBlue","DarkTurquoise","MediumSpringGreen","Lime","SpringGreen","Aqua","MidnightBlue","DodgerBlue","LightSeaGreen","ForestGreen","SeaGreen","LimeGreen","MediumSeaGreen","Turquoise","RoyalBlue","SteelBlue","DarkSlateBlue","MediumTurquoise","Indigo","DarkOliveGreen","CadetBlue","CornflowerBlue","RebeccaPurple","MediumAquaMarine","DimGray","SlateBlue","OliveDrab","MediumSlateBlue","LawnGreen","Chartreuse","Maroon","Purple","Olive","Gray","BlueViolet","DarkRed","DarkMagenta","SaddleBrown","DarkSeaGreen","LightGreen","MediumPurple","DarkViolet","DarkOrchid","YellowGreen","Sienna","Brown","GreenYellow","FireBrick","DarkGoldenRod","MediumOrchid","RosyBrown","DarkKhaki","MediumVioletRed","IndianRed","Peru","Chocolate","Tan","LightGray","Thistle", "Orchid", "PaleVioletRed","Crimson","Plum","BurlyWood","DarkSalmon","Violet","Khaki","SandyBrown","Wheat","Salmon","Red","Fuchisa","Magenta","DeepPink","OrangeRed","Tomato","HotPink","DarkOrange"];
+      	var colors = ["lime","red","aqua","purple","yellow","green","navy","olive"]
       	
       	// init ball
       	var userBall = {x: 450,
@@ -88,7 +88,7 @@
           	            create: function() {
           	              ctx.beginPath();
             	            ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
-            	            ctx.fillStyle = "green";
+            	            ctx.fillStyle = "Fuchisa";
                         	ctx.fill();
                         	ctx.closePath();
           	            },
@@ -118,6 +118,8 @@
       	                ctx.textAlign = "center";
       	                ctx.fillText("Level: " + this.level, canvas.width/2, canvas.height*4/5 - 25);
       	                ctx.fillText("Score: " + this.score, canvas.width/2, canvas.height*4/5);
+			
+			      
       	              }
       	};
       
@@ -197,7 +199,7 @@
         // generate levels
         var initReqScore = 50;
         function newLevel() {
-          for (var i = 1; i < 101; i++) {
+          for (var i = 1; i < 31; i++) {
             if (userBall.level == i) {
               if (Math.round((Date.now() - start)/1000) >= (20 + 5*i)  && userBall.score >= initReqScore) {
                 start = Date.now();
@@ -205,12 +207,12 @@
                 initReqScore += 10*i;
                 
                 userBall.level++;
-                if (i % 5 == 0) {userBall.radius--};
-                if (i % 11 == 0) {userBall.termVel++}
+                if (i % 3 == 0) {userBall.radius--};
+                if (i % 5 == 0) {userBall.termVel++}
                 
                 if (i % 2 == 0) {
-                  canvas.height += 15;
-                  canvas.width = canvas.height*2
+                  canvas.height += 10;
+                  canvas.width = canvas.height
                 }
                 
                 maxFood++;
@@ -257,7 +259,7 @@
           
           newLevel();
           
-          if (userBall.level == 100){
+          if (userBall.level == 30){
             ctx.clearRect(0,0,canvas.width,canvas.height);
             ctx.fillStyle = "black";
       	    ctx.font = "40px Helvetica";
