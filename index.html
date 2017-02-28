@@ -236,6 +236,7 @@
       	  
         	ctx.clearRect(0,0,canvas.width,canvas.height);
           
+					var elapsedTime = Math.round((Date.now() - start)/1000);
           
           for (var i = 0; i < foodList.length; i++) {
             if ((foodList[i].x < (userBall.x - 2*userBall.r) || foodList[i].x > (userBall.x + 2*userBall.r)) && (foodList[i].y < (userBall.y - 2*userBall.r) || foodList[i].y > userBall.y + 2*userBall.r)) {continue;}
@@ -273,10 +274,9 @@
             ctx.fillStyle = "black";
       	    ctx.font = "40px Helvetica";
       	    ctx.textAlign = "center";
-      	    ctx.fillText("Level: " + this.level, canvas.width/2, canvas.height/2 - 100);
+      	    ctx.fillText("You won!", canvas.width/2, canvas.height/2 - 100);
       	    ctx.fillText("Score: " + userBall.score, canvas.width/2, canvas.height/2);
-      	    ctx.fillText("Level: " + userBall.level, canvas.width/2, canvas.height/2 + 100);
-          } else if (Math.round((Date.now() - start)/1000) >= initTime  && userBall.score < (initReqScore - Math.floor(userBall.score*0.8) - 10*userBall.level)) {
+          } else if ( elapsedTime >= initTime  && userBall.score < (initReqScore - Math.floor(userBall.score*0.8) - 10*userBall.level)) {
 						
 							window.alert("Sorry, you ran out of time. Reload to try again.");
 							
