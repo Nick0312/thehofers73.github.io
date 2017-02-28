@@ -12,7 +12,7 @@
   
   	<body>
   	  <br>  <p>Use the arrow keys to navigate!</p> <br> 
-	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
+	    <canvas id = "gameCanvas" width = "630" height = "420"></canvas>
 			<br>  <p>Win by beating Level 15. Each level will increase in difficulty systematically.</p>	<br>
 			
 	    <script>
@@ -127,7 +127,7 @@
 												ctx.textAlign = "left";
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
 												if (userBall.score < initReqScore) {	
-													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*1/5, 10);
+													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*2/5, 10);
 												} 
       	              }
       	};
@@ -229,7 +229,7 @@
 								
                 if (i % 2 == 0) {
                   canvas.height += 10;
-                  canvas.width = 2*canvas.height
+                  canvas.width = 3*canvas.height/2
 								}
                 
                 maxFood++;
