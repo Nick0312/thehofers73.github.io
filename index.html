@@ -2,11 +2,10 @@
 	<html>
 	  <head>
 	    <meta charset = "utf-8">
-	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     	<style>
     	  * { padding: 0; margin: 0;}
-    	  p {text-align: center; font-style: 'Source Sans Pro'; font-size: 30;}
-    	  canvas {background: #ccc; display: block; margin: 0 auto;}
+    	  p {text-align: center; font-family:"Trebuchet MS", Helvetica, sans-serif; font-size: 30;}
+    	  canvas {background: #ede; display: block; margin: 0 auto;}
     	</style>
 	  </head>
   
@@ -19,13 +18,7 @@
       	var canvas = document.getElementById("gameCanvas");
       	var ctx = canvas.getContext("2d");
 				
-				// canvas background & onload
-				var background = new Image();
-				background.src = "https://fsmedia.imgix.net/9a/a3/62/2f/6d0f/405b/aa53/043e93d8911e/a-view-of-ngc-4696-the-largest-galaxy-in-the-centaurus-cluster.jpeg?rect=0,126,700,350&dpr=1.5&auto=format,compress&q=75";
-				
-				background.onload = function(){
-   			 ctx.drawImage(background,0,0);   
-				}
+			
       	
       	// timer
         var start = Date.now();
@@ -128,7 +121,7 @@
       	                ctx.fillText("Level: " + this.level, 0, canvas.height - 35);
       	                ctx.fillText("Score: " + this.score, 0, canvas.height - 10);
 											
-			      						ctx.font = "15px monospace";
+			      						ctx.font = "12px Lucida Console";
 												ctx.textAlign = "left";
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", canvas.width*1/5, 10);
 												if (userBall.score < initReqScore) {	
