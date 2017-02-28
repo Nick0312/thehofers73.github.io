@@ -12,12 +12,20 @@
   
   	<body>
   	  <br> <br> <p>Use the arrow keys to navigate!</p> <br> <br>
-	    <canvas id = "gameCanvas" width = "600" height = "300"></canvas>
+	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
 			<br> <br> <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
       	var ctx = canvas.getContext("2d");
+				
+				// canvas background & onload
+				var background = new Image();
+				background.src = "https://fsmedia.imgix.net/9a/a3/62/2f/6d0f/405b/aa53/043e93d8911e/a-view-of-ngc-4696-the-largest-galaxy-in-the-centaurus-cluster.jpeg?rect=0,126,700,350&dpr=1.5&auto=format,compress&q=75";
+				
+				background.onload = function(){
+   			 ctx.drawImage(background,0,0);   
+				}
       	
       	// timer
         var start = Date.now();
