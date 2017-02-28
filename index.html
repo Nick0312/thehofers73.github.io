@@ -117,12 +117,12 @@
       	                ctx.fillStyle = "black";
       	                ctx.font = "20px Comic Sans MS";
       	                ctx.textAlign = "left";
-      	                ctx.fillText("Level: " + this.level, 0, canvas.height*4/5 - 25);
-      	                ctx.fillText("Score: " + this.score, 0, canvas.height*4/5);
+      	                ctx.fillText("Level: " + this.level, 0, canvas.height - 55);
+      	                ctx.fillText("Score: " + this.score, 0, canvas.height - 30);
 											
 			      						ctx.font = "15px monospace";
 												ctx.textAlign = "left";
-												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds till upgrade", canvas.width*2/5, 10);
+												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds till upgrade", canvas.width*1/5, 10);
 												if (userBall.score < initReqScore) {	
 													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*3/5, 10);
 												}
