@@ -6,7 +6,8 @@
     	  * { padding: 0; margin: 0;}
     	  p {text-align: center; font-family:"Trebuchet MS", Helvetica, sans-serif; font-size: 30;}
     	  canvas {background: #ede; display: block; margin: 0 auto;}
-				button {text-align: center;}		
+				div {text-align: center, margin:auto;}		
+				
     	</style>
 	  </head>
   
@@ -15,7 +16,7 @@
 	    <canvas id = "gameCanvas" width = "700" height = "350"></canvas>
 			<br>  <p>Win by beating Level 30. Each level will increase in difficulty systematically.</p>	<br>
 			<p>To change the overall difficulty, press the buttons below.</p> <br>
-			<button id="EasyButton">Easy</button> <button id="MediumButton">Medium</button> <button id="HardButton">Hard</button>
+			<div> <button id="EasyButton">Easy</button> <button id="MediumButton">Medium</button> <button id="HardButton">Hard</button> </div>
 	    <script>
       	// create canvas
       	var canvas = document.getElementById("gameCanvas");
