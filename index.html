@@ -212,7 +212,7 @@
                 start = Date.now();
                 
 								initTime += 3*i;
-                initReqScore = Math.floor(userBall.score*0.8) + initReqscore + 10*i;
+                initReqScore = Math.floor(userBall.score*0.8) + initReqScore + 10*i;
                 
                 userBall.level++;
                 if (i % 3 == 0) {userBall.radius--};
@@ -278,10 +278,8 @@
       	    ctx.fillText("Level: " + userBall.level, canvas.width/2, canvas.height/2 + 100);
           } else if (Math.round((Date.now() - start)/1000) >= initTime  && userBall.score < initReqScore) {
 						
-							var a = confirm("Sorry, you ran out of time. Reload to try again.");
-							if (a == true) {
-								location.reload();
-							} 
+							window.alert("Sorry, you ran out of time. Reload to try again.");
+							
 					} else {
             requestAnimationFrame(drawLoop);
 					}
