@@ -25,15 +25,6 @@
 				var medium = document.getElementById("MediumButton");
 				var hard = document.getElementById("HardButton");
 				
-				easy.onclick = function() {
-					userBall.difficulty = 1.3;
-				}
-				medium.onclick = function() {
-					userBall.difficulty = 1.5;
-				}
-				hard.onclick = function() {
-					userBall.difficulty = 1.7;
-				}
       	
       	// timer
         var start = Date.now();
@@ -182,6 +173,17 @@
         	}
         	
       	}
+				
+				// button click functions
+				easy.onclick = function() {
+					userBall.difficulty = 1.3;
+				}
+				medium.onclick = function() {
+					userBall.difficulty = 1.5;
+				}
+				hard.onclick = function() {
+					userBall.difficulty = 1.7;
+				}
         
         // spawn food
         function food(x,y,r,c) {
