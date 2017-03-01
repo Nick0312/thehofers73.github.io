@@ -126,8 +126,8 @@
 			      						ctx.font = "15px monospace";
 												ctx.textAlign = "left";
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
-												if (userBall.score < initReqScore) {	
-													ctx.fillText((initReqScore - this.score) + " points needed", canvas.width*2/5, 10);
+												if (userBall.score < ReqScore) {	
+													ctx.fillText((ReqScore - this.score) + " points needed", canvas.width*2/5, 10);
 												} 
       	              }
       	};
@@ -207,7 +207,7 @@
         }
         
         // generate levels
-        var initReqScore = 35;
+        var ReqScore = 35;
 				var initTime = 20;
 				
 		  	var gameOver = false;
@@ -216,11 +216,11 @@
           for (var i = 1; i < 16; i++) {
             if (userBall.level == i) {
 							
-              if ((Math.round((Date.now() - start)/1000) <= initTime  && userBall.score >= initReqScore)) {
+              if ((Math.round((Date.now() - start)/1000) <= initTime  && userBall.score >= ReqScore)) {
                 start = Date.now();
                 
 								initTime += i;
-                initReqScore = 15*i;
+                initReqScore += 15*i;
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
