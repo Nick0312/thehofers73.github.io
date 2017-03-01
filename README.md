@@ -1,2 +1,2 @@
 # thehofers73.github.io
-website to host "50 shades of EAT"
+Website to host a game created in the process of learning the HTML5 canvas and javascript.  
