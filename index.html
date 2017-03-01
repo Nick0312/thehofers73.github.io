@@ -20,6 +20,12 @@
       	var canvas = document.getElementById("gameCanvas");
       	var ctx = canvas.getContext("2d");
 				
+				var gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, canvas.width, canvas.width/2, canvas.height/2, 0);
+				gradient.addColorStop(0, 'white');
+				gradient.addColorStop(1, 'grey');
+				ctx.fillStyle = gradient;
+				ctx.fillRect(0, 0, canvas.width, canvas.width);
+				
       	// timer
         var start = Date.now();
       	
