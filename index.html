@@ -121,10 +121,12 @@
       	                ctx.textAlign = "left";
       	                ctx.fillText("Level: " + this.level, 0, canvas.height - 35);
       	                ctx.fillText("Score: " + this.score, 0, canvas.height - 10);
-											
+												
+												var timeLeft = (initTime - (Math.floor((Date.now() - start)/1000));
+												
 			      						ctx.font = "15px monospace";
 												ctx.textAlign = "left";
-			      						if ((initTime - (Math.floor((Date.now() - start)/1000)) <= 5) {
+			      						if (timeLeft <= 5) {
 													ctx.fillStyle = "Red";		 
 												}
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
