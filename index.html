@@ -219,7 +219,7 @@
                 start = Date.now();
                 
 								initTime += i;
-                ReqScore += 10*Math.pow(i,2);
+                ReqScore += Math.floor(10*Math.pow(i,1.5));
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
