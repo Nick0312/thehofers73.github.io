@@ -20,13 +20,15 @@
       	var canvas = document.getElementById("gameCanvas");
       	var ctx = canvas.getContext("2d");
 				
-				
       	// timer
         var start = Date.now();
       	
       	// selection of html colors
       	var colors = ["lime","red","aqua","purple","yellow","green","navy","olive"]
       	
+				// choose color
+				var ballColor = prompt("Type in a color!");
+				
       	// init ball
       	var userBall = {x: 450,
           	            y: 300,
@@ -91,7 +93,7 @@
           	            create: function() {
           	              ctx.beginPath();
             	            ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
-            	            ctx.fillStyle = "#0095DD";
+            	            ctx.fillStyle = ballColor;
                         	ctx.fill();
                         	ctx.closePath();
           	            },
@@ -290,8 +292,11 @@
       	    ctx.fillText("You won!", canvas.width/2, canvas.height/2 - 100);
       	    ctx.fillText("Score: " + userBall.score, canvas.width/2, canvas.height/2);
           } else if (gameOver == true) {
-						
-							window.alert("Sorry, you ran out of time");
+							ctx.clearRect(0,0,canvas.width,canvas.height);
+            	ctx.fillStyle = "red";
+      	    	ctx.font = "40px Helvetica";
+      	    	ctx.textAlign = "center";
+      	    	ctx.fillText("You Lost. Reloading...", canvas.width/2, canvas.height/2 - 100);
 							location.reload(true);
 							
 					} else {
