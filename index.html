@@ -219,8 +219,8 @@
               if ((Math.round((Date.now() - start)/1000) <= initTime  && userBall.score >= initReqScore)) {
                 start = Date.now();
                 
-								initTime += 2*i;
-                initReqScore = Math.ceil(initReqScore*userBall.difficulty) + 7*i;
+								initTime += i;
+                initReqScore = Math.ceil(initReqScore*userBall.difficulty);
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
