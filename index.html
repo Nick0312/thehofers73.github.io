@@ -96,6 +96,28 @@
             	            ctx.fillStyle = ballColor;
                         	ctx.fill();
                         	ctx.closePath();
+													
+													if (this.level >= 4) {
+														ctx.beginPath();
+            	            	ctx.arc(this.x, this.y, this.r - 3, 0, Math.PI*2, false);
+            	            	ctx.fillStyle = "gold";
+                        		ctx.fill();
+                        		ctx.closePath();
+													}
+													if (this.level >= 7) {
+														ctx.beginPath();
+            	            	ctx.arc(this.x, this.y, this.r - 6, 0, Math.PI*2, false);
+            	            	ctx.fillStyle = "silver";
+                        		ctx.fill();
+                        		ctx.closePath();
+													}
+													if (this.level >= 10) {
+														ctx.beginPath();
+            	            	ctx.arc(this.x, this.y, this.r - 9, 0, Math.PI*2, false);
+            	            	ctx.fillStyle = "maroon";
+                        		ctx.fill();
+                        		ctx.closePath();
+													}
           	            },
           	            collisionDetect: function() {
           	              if (this.x > canvas.width - this.r) {
