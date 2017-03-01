@@ -97,24 +97,31 @@
                         	ctx.fill();
                         	ctx.closePath();
 													
-													if (this.level >= 4) {
+													if (this.level >= 3) {
 														ctx.beginPath();
             	            	ctx.arc(this.x, this.y, this.r - 3, 0, Math.PI*2, false);
             	            	ctx.fillStyle = "gold";
                         		ctx.fill();
                         		ctx.closePath();
 													}
-													if (this.level >= 7) {
+													if (this.level >= 6) {
 														ctx.beginPath();
             	            	ctx.arc(this.x, this.y, this.r - 6, 0, Math.PI*2, false);
             	            	ctx.fillStyle = "silver";
                         		ctx.fill();
                         		ctx.closePath();
 													}
-													if (this.level >= 10) {
+													if (this.level >= 9) {
 														ctx.beginPath();
             	            	ctx.arc(this.x, this.y, this.r - 9, 0, Math.PI*2, false);
-            	            	ctx.fillStyle = "maroon";
+            	            	ctx.fillStyle = "lime";
+                        		ctx.fill();
+                        		ctx.closePath();
+													}
+													if (this.level >= 15) {
+														ctx.beginPath();
+            	            	ctx.arc(this.x, this.y, this.r - 12, 0, Math.PI*2, false);
+            	            	ctx.fillStyle = "black";
                         		ctx.fill();
                         		ctx.closePath();
 													}
@@ -237,7 +244,7 @@
         
         // generate levels
         var ReqScore = 10;
-				var initTime = 10;
+				var initTime = 7;
 				
 		  	var gameOver = false;
 				
@@ -249,10 +256,9 @@
                 start = Date.now();
                 
 								initTime += 2*i;
-                ReqScore += Math.floor(10*Math.pow(i,1.5));
+                ReqScore += Math.floor(10*Math.pow(i,1.6));
                 
                 userBall.level++;
-                if (i % 2 == 0) {userBall.radius--};
                 if (i % 3 == 0) {userBall.termVel++}
 								if (i % 5 == 0) {spawnProb += 0.01;}
 								
@@ -319,7 +325,10 @@
       	    	ctx.font = "40px Helvetica";
       	    	ctx.textAlign = "center";
       	    	ctx.fillText("You Lost. Reloading...", canvas.width/2, canvas.height/2 - 100);
-							location.reload(true);
+						
+							userBall.x = canvas.width/2;
+							userBall.y = canvas.height/2;
+							userBall.create();
 							
 					} else {
             requestAnimationFrame(drawLoop);
