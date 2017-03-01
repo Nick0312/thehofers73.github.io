@@ -2,7 +2,9 @@
 	<html>
 	  <head>
 	    <meta charset = "utf-8">
-		    
+		  
+			<!-- the following aspect of the head credit Nick0312 -->
+			
 			<!-- important header stuff -->
  	 	 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,8 +41,6 @@
       	// selection of html colors
       	var colors = ["lime","red","aqua","purple","yellow","green","navy","olive"]
       	
-				// choose color
-				var ballColor = prompt("Type in a color! An unrecognized color will lead to randomly changing colors.");
 				
       	// init ball
       	var userBall = {x: 450,
@@ -106,7 +106,7 @@
           	            create: function() {
           	              ctx.beginPath();
             	            ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
-            	            ctx.fillStyle = ballColor;
+            	            ctx.fillStyle = "#0eed3e";
                         	ctx.fill();
                         	ctx.closePath();
 													
