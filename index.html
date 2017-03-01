@@ -324,12 +324,14 @@
             	ctx.fillStyle = "red";
       	    	ctx.font = "40px Helvetica";
       	    	ctx.textAlign = "center";
-      	    	ctx.fillText("You Lost. Reloading...", canvas.width/2, canvas.height/2 - 100);
+      	    	ctx.fillText("You Lost. Click to reload.", canvas.width/2, canvas.height/2 - 100);
 						
 							userBall.x = canvas.width/2;
 							userBall.y = canvas.height/2;
 							userBall.create();
 							
+							canvas.addEventListener("click",function() {location.reload(true);}, false);
+						
 					} else {
             requestAnimationFrame(drawLoop);
 					}
