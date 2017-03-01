@@ -124,6 +124,9 @@
 											
 			      						ctx.font = "15px monospace";
 												ctx.textAlign = "left";
+			      						if ((initTime - (Math.floor((Date.now() - start)/1000) <= 5) {
+													ctx.fillStyle = "Red";		 
+												}
 												ctx.fillText((initTime - (Math.floor((Date.now() - start)/1000))) + " seconds left...", 0, 10);
 												if (userBall.score < ReqScore) {	
 													ctx.fillText((ReqScore - this.score) + " points needed", canvas.width*2/5, 10);
