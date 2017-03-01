@@ -220,13 +220,13 @@
                 start = Date.now();
                 
 								initTime += i;
-                initReqScore = Math.ceil(initReqScore*userBall.difficulty);
+                initReqScore += 1;
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
                 if (i % 3 == 0) {userBall.termVel++}
                 if (i % 4 == 0) {userBall.difficulty += 0.1;}
-								if (i % 5 == 0) {spawnProb += 0.02;}
+								if (i % 5 == 0) {spawnProb += 0.01;}
 								
                 if (i % 2 == 0) {
                   canvas.height += 10;
