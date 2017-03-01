@@ -255,7 +255,7 @@
               if ((Math.round((Date.now() - start)/1000) <= initTime  && userBall.score >= ReqScore)) {
                 start = Date.now();
                 
-								initTime += 2*i;
+								initTime += i;
                 ReqScore += Math.floor(10*Math.pow(i,1.6));
                 
                 userBall.level++;
