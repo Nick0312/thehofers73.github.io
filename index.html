@@ -115,7 +115,7 @@
           	            },
       	              score: 0,
       	              level: 1,
-											difficulty: 1.2,
+											difficulty: 1.3,
       	              display: function() {
       	                ctx.fillStyle = "Black";
       	                ctx.font = "20px Verdana";
@@ -220,7 +220,7 @@
                 start = Date.now();
                 
 								initTime += 2*i;
-                initReqScore = Math.floor(initReqScore*userBall.difficulty) + 5*i;
+                initReqScore = Math.ceil(initReqScore*userBall.difficulty) + 7*i;
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
