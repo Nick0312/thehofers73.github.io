@@ -115,7 +115,6 @@
           	            },
       	              score: 0,
       	              level: 1,
-											difficulty: 1.3,
       	              display: function() {
       	                ctx.fillStyle = "Black";
       	                ctx.font = "20px Verdana";
@@ -220,12 +219,11 @@
                 start = Date.now();
                 
 								initTime += i;
-                ReqScore += 15*i;
+                ReqScore += 20*Math.pow(i,2);
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
                 if (i % 3 == 0) {userBall.termVel++}
-                if (i % 4 == 0) {userBall.difficulty += 0.1;}
 								if (i % 5 == 0) {spawnProb += 0.01;}
 								
                 if (i % 2 == 0) {
