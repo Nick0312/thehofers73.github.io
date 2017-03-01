@@ -206,8 +206,8 @@
         }
         
         // generate levels
-        var ReqScore = 35;
-				var initTime = 20;
+        var ReqScore = 40;
+				var initTime = 15;
 				
 		  	var gameOver = false;
 				
@@ -219,7 +219,7 @@
                 start = Date.now();
                 
 								initTime += i;
-                ReqScore += 20*Math.pow(i,2);
+                ReqScore += 10*Math.pow(i,2);
                 
                 userBall.level++;
                 if (i % 2 == 0) {userBall.radius--};
